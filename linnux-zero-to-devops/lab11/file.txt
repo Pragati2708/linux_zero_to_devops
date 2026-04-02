@@ -1,0 +1,8 @@
+#!/bin/sh
+# Lab11 — Delete .tmp files older than 7 days
+
+# Preview files that would be deleted:
+find . -type f -name '*.tmp' -mtime +7 -print
+
+# Delete them (uncomment to perform deletion):
+# find . -type f -name '*.tmp' -mtime +7 -delete

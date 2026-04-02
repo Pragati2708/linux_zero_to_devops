@@ -1,0 +1,32 @@
+#!/bin/sh
+# Lab13 — access.log creation and analysis
+
+# Create the access.log (if not already present):
+cat > access.log <<'ACCESS'
+192.168.0.2 - - [03/Aug/2025:10:01:23 +0000] "GET /index.html HTTP/1.1" 200 1024
+192.168.0.3 - - [03/Aug/2025:10:01:24 +0000] "POST /login HTTP/1.1" 200 512
+192.168.0.2 - - [03/Aug/2025:10:01:25 +0000] "GET /about HTTP/1.1" 200 2048
+192.168.0.4 - - [03/Aug/2025:10:01:26 +0000] "GET /index.html HTTP/1.1" 200 1024
+192.168.0.2 - - [03/Aug/2025:10:01:27 +0000] "GET /contact HTTP/1.1" 404 256
+192.168.0.3 - - [03/Aug/2025:10:01:28 +0000] "GET /profile HTTP/1.1" 200 512
+192.168.0.2 - - [03/Aug/2025:10:01:29 +0000] "GET /products HTTP/1.1" 200 3072
+192.168.0.2 - - [03/Aug/2025:10:01:30 +0000] "GET /cart HTTP/1.1" 200 4096
+ACCESS
+
+# 1) Count how many times the log was accessed (line count):
+wc -l < access.log
+
+# 2) Show only lines where HTTP status code is 404:
+grep ' 404 ' access.log
+
+# 3) List all unique IPs that accessed the server:
+awk '{print $1}' access.log | sort -u
+
+# 4) Count how many requests were POST:
+grep -c 'POST' access.log
+
+# 5) List all requested URLs (one per line):
+awk -F'"' '{print $2}' access.log | awk '{print $2}'
+
+# 6) Find which IPs triggered 404 errors (unique, with counts):
+grep ' 404 ' access.log | awk '{print $1}' | sort | uniq -c
