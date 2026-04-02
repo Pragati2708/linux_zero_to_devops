@@ -1,0 +1,4 @@
+#!/bin/sh
+# Lab10 — Find all .log files modified in last 1 day
+
+find . -type f -name '*.log' -mtime -1 -print

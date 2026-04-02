@@ -1,0 +1,8 @@
+#!/bin/sh
+# Lab6 — Show running processes and search for "root"
+
+# Full process list filtered for 'root' occurrences:
+ps aux | grep '[r]oot'
+
+# Or list processes owned by root (if supported):
+ps -U root -u root u

@@ -1,0 +1,9 @@
+#!/bin/sh
+# Lab5 — Count occurrences of a word and print each match on its own line
+# Usage: replace <word> and <file>
+
+# Count occurrences:
+grep -oi '<word>' <file> | wc -l
+
+# Show each match on its own line:
+grep -o '<word>' <file>

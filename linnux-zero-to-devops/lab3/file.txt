@@ -1,0 +1,8 @@
+#!/bin/sh
+# Lab3 — Count total number of .txt files in current directory
+
+# Count files with .txt extension in current directory (non-recursive):
+find . -maxdepth 1 -type f -name '*.txt' | wc -l
+
+# Count recursively in the project:
+find . -type f -name '*.txt' | wc -l

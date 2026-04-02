@@ -1,0 +1,7 @@
+#!/bin/sh
+# Lab7 — Show only .log files and sort alphabetically
+
+ls -1 *.log 2>/dev/null | sort
+
+# Or recursive listing of .log files sorted by name:
+find . -type f -name '*.log' -print | sort

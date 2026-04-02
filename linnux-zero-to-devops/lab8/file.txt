@@ -1,0 +1,7 @@
+#!/bin/sh
+# Lab8 — Show disk space and filter 'drivers'
+
+# Show human-readable disk space and filter lines containing 'drivers' (case-insensitive):
+df -h | grep -i drivers
+
+# If nothing prints, there were no matches.

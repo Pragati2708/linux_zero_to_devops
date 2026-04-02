@@ -1,0 +1,4 @@
+#!/bin/sh
+# Lab4 — List all system users from /etc/passwd (usernames only)
+
+cut -d: -f1 /etc/passwd

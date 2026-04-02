@@ -1,0 +1,8 @@
+#!/bin/sh
+# Lab1 — Search for a specific word "apple" in a file and count it
+# Usage: replace <file> with the target filename, e.g. ./file.txt
+
+grep -oi 'apple' <file> | wc -l
+
+# To also show each match on its own line:
+grep -oi 'apple' <file>

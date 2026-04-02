@@ -1,0 +1,17 @@
+#!/bin/sh
+# Lab9 — Sort names alphabetically and remove duplicates
+
+# Example: if you have names.txt in this directory:
+sort -f names.txt | uniq
+
+# To create a sample names.txt for testing:
+cat > names.txt <<'NAMES'
+Alice
+Bob
+alice
+Bob
+Charlie
+alice
+NAMES
+
+# Then run the sort/uniq command above.

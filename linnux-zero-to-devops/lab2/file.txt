@@ -1,0 +1,8 @@
+#!/bin/sh
+# Lab2 — Show current users logged in
+
+# Show who is currently logged in:
+who
+
+# Or show a concise list of logged-in user names:
+users

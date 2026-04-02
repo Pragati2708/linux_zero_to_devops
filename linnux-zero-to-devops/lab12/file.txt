@@ -1,0 +1,4 @@
+#!/bin/sh
+# Lab12 — Count .java files in the project
+
+find . -type f -name '*.java' | wc -l
