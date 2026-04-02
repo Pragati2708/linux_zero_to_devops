@@ -1,0 +1,6 @@
+apple 9
+apple 10
+mango 20
+kiwi 19
+orange 16
+
